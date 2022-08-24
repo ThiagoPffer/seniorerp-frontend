@@ -1,0 +1,32 @@
+<header class="navbar bg-light">
+    <div class="container">
+        <div class="navbar-header" style="width: 100%;">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="mdi mdi-menu"></span>
+            </button>
+            <div style="width: 100%;"><h2 class="title text-center">{{vm.title}}</h2></div>
+        </div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header side-menu__header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="side-menu__body">
+                <ul class="side-menu__list">
+                    <li class="side-menu__item">
+                        <a href="#/listagem">
+                            <span class="mdi mdi-file-outline"></span>
+                            Listagem
+                        </a>
+                    </li>
+                    <li class="side-menu__item">
+                        <a href="#/item">
+                            <span class="mdi mdi-plus"></span>
+                            Novo item
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

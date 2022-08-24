@@ -1,0 +1,61 @@
+{
+  "_from": "angular-locale",
+  "_id": "angular-locale@0.3.1",
+  "_inBundle": false,
+  "_integrity": "sha1-JydtnUGv1K2DfOTJc9BsN68JkCo=",
+  "_location": "/angular-locale",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "angular-locale",
+    "name": "angular-locale",
+    "escapedName": "angular-locale",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-locale/-/angular-locale-0.3.1.tgz",
+  "_shasum": "27276d9d41afd4ad837ce4c973d06c37af09902a",
+  "_spec": "angular-locale",
+  "_where": "/home/thiago.ramos/projetos/sistema-goldenco-frontend",
+  "author": {
+    "name": "Gustavo Giserman"
+  },
+  "bugs": {
+    "url": "https://github.com/vtex/angular-locale/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Currency and Locale manager for AngularJS",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-uglify": "^0.9.1"
+  },
+  "homepage": "https://github.com/vtex/angular-locale#readme",
+  "keywords": [
+    "angular",
+    "locale",
+    "currency",
+    "monetary",
+    "vtex"
+  ],
+  "license": "ISC",
+  "main": "dist/angular-locale.js",
+  "name": "angular-locale",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vtex/angular-locale.git"
+  },
+  "scripts": {
+    "start": "grunt",
+    "test": "npm test"
+  },
+  "version": "0.3.1"
+}

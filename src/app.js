@@ -1,0 +1,1 @@
+var appModule = angular.module("seniorerp", ["ngRoute", "ui.utils.masks"]);

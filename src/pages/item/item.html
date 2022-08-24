@@ -1,0 +1,97 @@
+<p-header title="vm.title"></p-header>
+<main class="main-page">
+    <form name="itemForm">
+        <section class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="ipt-nome" class="form-label required">Nome</label>
+                    <input type="text" 
+                        id="ipt-nome" 
+                        class="form-control mb-4" 
+                        placeholder="Insira o nome do item" 
+                        ng-required="true" 
+                        maxlength="50"
+                        ng-model="vm.item.nome">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="ipt-unidade-medida" class="form-label required">Unidade de medida</label>
+                    <select id="ipt-unidade-medida" 
+                        class="form-select mb-4" 
+                        aria-label="Default select example" 
+                        ng-required="true" 
+                        ng-options="unidade as unidade.descricao for unidade in unidadesMedida track by unidade.id"
+                        ng-model="vm.item.unidadeMedida" >
+                        <option value="">Selecione a unidade</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label for="ipt-quantidade" class="form-label">Quantidade</label>
+                    <div class="input-group mb-4">
+                        <input type="text" 
+                            id="ipt-quantidade" 
+                            aria-label="Insira a quantidade"
+                            aria-describedby="basic-addon2"
+                            class="form-control" 
+                            ng-model="vm.item.quantidade" 
+                            ng-disabled="!vm.item.unidadeMedida"
+                            ui-number-mask="vm.item.unidadeMedida.decimais">
+                        <span class="input-group-text" id="basic-addon2" ng-if="vm.item.unidadeMedida">{{vm.item.unidadeMedida.abreviatura}}</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="ipt-preco" class="form-label required">Preço</label>
+                    <input type="text" 
+                        id="ipt-preco" 
+                        class="form-control mb-4" 
+                        ng-required="true"
+                        ng-model="vm.item.preco"
+                        ui-money-mask >
+                </div>
+                <div class="col-md-3" style="display: flex; align-items: flex-end;">
+                    <div class="form-check mb-4">
+                        <input type="checkbox" 
+                            ng-model="vm.item.perecivel"
+                            id="chk-perecivel" 
+                            class="form-check-input">
+                        <label for="chk-perecivel" class="form-check-label required">Produto perecível</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="ipt-data-validade" class="form-label" ng-class="{'required': vm.item.perecivel}">Data de validade</label>
+                    <input type="date" 
+                        id="ipt-data-validade" 
+                        class="form-control mb-4" 
+                        ng-model="vm.item.dataValidade"
+                        ng-change="vm.validateDataValidade()"
+                        ng-required="vm.item.perecivel"
+                        ng-disabled="!vm.item.perecivel" >
+                </div>
+                <div class="col-md-6">
+                    <label for="ipt-data-fabricacao" class="form-label required">Data de fabricação</label>
+                    <input type="date" 
+                        id="ipt-data-fabricacao" 
+                        class="form-control mb-4"
+                        ng-model="vm.item.dataFabricacao"
+                        ng-change="vm.validateDataFabricacao()"
+                        ng-required="true" >
+                </div>
+            </div>
+            <div class="row mb-4" ng-if="vm.vencido">
+                <div class="alert alert-warning text-center d-flex align-center justify-center">
+                    <span style="font-size: 2rem; margin-right: 5px;" class="mdi mdi-alert-outline"></span>
+                    O item atual se encontra vencido!
+                </div>
+            </div>
+            <div class="row">
+                <div class="d-flex align-center justify-center gap-y-8">
+                    <button class="default-button filled" ng-click="vm.saveItem()" ng-disabled="itemForm.$invalid">Salvar</button>
+                    <a href="#/listagem" class="default-button outline">Cancelar</a>
+                </div>
+            </div>
+        </section>
+    </form>
+</main>

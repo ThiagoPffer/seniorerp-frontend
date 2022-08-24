@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR" ng-app="seniorerp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="vendor/@mdi/font/css/materialdesignicons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="icon" href="img/favicon.ico" type="images/ico" sizes="16x16">
+    <title>Sênior Frontend</title>
+
+    <!-- LIB -->
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-route/angular-route.js"></script>
+    <script src="vendor/angular-locale/dist/angular-locale.js"></script>
+    <script src="vendor/angular-input-masks/releases/angular-input-masks-standalone.min.js"></script>
+    <script src="src/config/angular-locale_pt-br.js"></script>
+    
+    <!-- APP -->
+    <script src="src/app.js"></script>
+    
+    <!-- CONFIGS -->
+    <script src="src/config/route-config.js"></script>
+    
+    <!-- CONTROLLERS -->
+    <script src="src/pages/listagem/listagem-controller.js"></script>
+    <script src="src/pages/item/item-controller.js"></script>
+    
+    <!-- SERVICES -->
+    <script src="src/commons/services/cliente-service.js"></script>
+    <script src="src/commons/services/notification-service.js"></script>
+    <script src="src/commons/services/storage-service.js"></script>
+
+    <!-- DIRECTIVES -->
+    <script src="src/commons/directives/sidemenu/sidemenu-directive.js"></script>
+    <script src="src/commons/directives/header/header-directive.js"></script>
+
+    <!-- FILTERS -->
+    <script src="src/commons/filters/telephone-filter.js"></script>
+</head>
+<body>
+    <div style="width: 100%;" ng-view></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<p-header title="'Listagem'"></p-header>
+<main class="main-page">
+    <section class="container mt-2">
+        <div class="row">
+            <div class="col-md-2 col-sm-12 mb-2 ">
+                <a class="default-button filled" href="#/item">
+                    <span class="mdi mdi-plus"></span>
+                    Novo item
+                </a>
+            </div>
+            <div class="col-md-10 col-sm-12 mb-5">
+                <div class="d-flex justify-content-end input-group">
+                    <input class="default-input" id="search" type="text" placeholder="Pesquisar item..." ng-model="vm.search">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="alert alert-info text-center" ng-if="vm.itens.length === 0">
+            Nenhum item cadastrado. Insira um novo em "Novo item"
+        </div>
+        <table class="table table-striped" ng-if="vm.itens.length > 0">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Unidade</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Perecível</th>
+                    <th>Validade</th>
+                    <th>Fabricação</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm.itens | filter:vm.search">
+                    <td class="tableItem">{{item.nome}}</td>
+                    <td class="tableItem">{{item.unidadeMedida.descricao}}</td>
+                    <td class="tableItem">{{item.quantidade + ' ' + item.unidadeMedida.abreviatura}}</td>
+                    <td class="tableItem">{{item.preco | currency}}</td>
+                    <td class="tableItem text-center">
+                        <span class="mdi" ng-class="{'mdi-check': item.perecivel, 'mdi-close': !item.perecivel}"></span>
+                    </td>
+                    <td class="tableItem">{{item.dataValidade ? item.dataValidade : '-' | date}}</td>
+                    <td class="tableItem">{{item.dataFabricacao | date}}</td>
+                    <td class="tableItem">
+                        <div class="row-container gap-y-8">
+                            <button class="icon-button" title="Remover item" ng-click="vm.removeItem(item.id)">
+                                <span class="mdi mdi-trash-can-outline" style="color: red;"></span>
+                            </button>
+                            <a href="#/item/{{item.id}}" class="icon-button" title="Visualizar item">
+                                <span class="mdi mdi-eye-outline"></span>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
