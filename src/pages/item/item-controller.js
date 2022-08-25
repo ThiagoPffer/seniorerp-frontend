@@ -31,25 +31,27 @@ function ItemController($scope, $route, $location, StorageService, NotificationS
 
     _initialize();
 
-    function _initialize() {
-        if (itemId) { _getItem(); }
-    }
+    function _initialize() { _getItens(); }
 
-    function _getItem() {
+    function _getItens() {
         StorageService.getItens().then(itens => {
             vm.itens = itens;
-            let item = itens.find((item, index) => {
-                if (item.id == itemId) {
-                    vm.index = index;
-                    return true;
-                }
-            });
-            item.dataValidade = new Date(item.dataValidade);
-            item.dataFabricacao = new Date(item.dataFabricacao);
-            vm.item = item;
-            vm.title = item.nome;
-            $scope.$apply();
-        })
+            if (itemId) { _setItem(); }
+        });
+    }
+
+    function _setItem() {
+        let item = vm.itens.find((item, index) => {
+            if (item.id == itemId) {
+                vm.index = index;
+                return true;
+            }
+        });
+        item.dataValidade = new Date(item.dataValidade);
+        item.dataFabricacao = new Date(item.dataFabricacao);
+        vm.item = item;
+        vm.title = item.nome;
+        $scope.$apply();
     }
 
     function _saveItem() {
