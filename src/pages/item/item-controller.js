@@ -40,11 +40,6 @@ function ItemController($scope, $route, $location, StorageService, NotificationS
         });
     }
 
-    vm.teste = teste;
-    function teste(params) {
-        console.log(vm.item)
-    }
-
     function _setItem() {
         let item = vm.itens.find((item, index) => {
             if (item.id == itemId) {
