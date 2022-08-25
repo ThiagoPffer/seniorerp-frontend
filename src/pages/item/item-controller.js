@@ -2,7 +2,7 @@ appModule.controller("ItemController", ItemController);
 
 function ItemController($scope, $route, $location, StorageService, NotificationService, itemId) {
     var vm = this;
-    vm.itens = [];
+    vm.itemId = itemId;
     vm.item = { quantidade: 0 };
     vm.title = 'Novo item'
     vm.saveItem = _saveItem;
@@ -35,9 +35,14 @@ function ItemController($scope, $route, $location, StorageService, NotificationS
 
     function _getItens() {
         StorageService.getItens().then(itens => {
-            vm.itens = itens;
+            vm.itens = itens ? itens : [];
             if (itemId) { _setItem(); }
         });
+    }
+
+    vm.teste = teste;
+    function teste(params) {
+        console.log(vm.item)
     }
 
     function _setItem() {

@@ -36,7 +36,7 @@
                 <tr ng-repeat="item in vm.itens | filter:vm.search">
                     <td class="tableItem">{{item.nome}}</td>
                     <td class="tableItem">{{item.unidadeMedida.descricao}}</td>
-                    <td class="tableItem">{{item.quantidade + ' ' + item.unidadeMedida.abreviatura}}</td>
+                    <td class="tableItem">{{item.quantidade | number}} {{item.unidadeMedida.abreviatura}}</td>
                     <td class="tableItem">{{item.preco | currency}}</td>
                     <td class="tableItem text-center">
                         <span class="mdi" ng-class="{'mdi-check': item.perecivel, 'mdi-close': !item.perecivel}"></span>
